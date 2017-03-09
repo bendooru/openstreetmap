@@ -64,7 +64,11 @@ id = zeros(1, Nways);
 nd = cell(1, Nways);
 tag = cell(1, Nways);
 for i=1:Nways
-    waytemp = way{i};
+    if Nways == 1
+        waytemp = way;
+    else
+        waytemp = way{i};
+    end
     
     id(1,i) = str2double(waytemp.Attributes.id);
     
